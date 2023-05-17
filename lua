@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Th4nh1204/UILibrary/main/1')))()
 local Window = OrionLib:MakeWindow({Name = "T1m Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-OrionLib:MakeNotification({ --Thông Tin 
+OrionLib:MakeNotification({ --Thông Tin Chủ Code
 	Name = "T1m Hub",
 	Content = "Contact Discord: T1m#9796",
 	Image = "rbxassetid://4483345998",
@@ -19,11 +19,11 @@ local Main = Main:AddSection({
 	Name = "Made By T1m#9796"
 })
 
-Main:AddLabel("Default:Anti AFK ✅")
+Main:AddLabel("Anti AFK ✅")
 Main:AddButton({
 	Name = "Kawai Dojo",
 	Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4670.95, -17.5984, 1864.31)
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer()
   	end    
 })
 
@@ -31,7 +31,7 @@ if not game:IsLoaded() then
     game.Loaded:wait()
 end
 Main:AddButton({
-	Name = "No Fog",
+	Name = "Anti Lag",
 	Callback = function()
         local ToDisable = {
             Textures = true,
