@@ -20,12 +20,8 @@ local Main = Main:AddSection({
 })
 
 Main:AddLabel("Default:Anti AFK ✅")
-Main:AddButton({
-	Name = "Kawai Dojo",
-	Callback = function()
-        game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer()
-  	end    
-})
+Main:AddLabel("Default:Auto GEMS ✅")
+
 
 if not game:IsLoaded() then
     game.Loaded:wait()
@@ -111,10 +107,13 @@ if not game:IsLoaded() then
 end
 
 
-local VirtualUser = game:service'VirtualUser'
+local VirtualUser = game:service'VirtualUser' --auto afk
     game:service'Players'.LocalPlayer.Idled:connect(function()
         VirtualUser:CaptureController()
         VirtualUser:ClickButton2(Vector2.new())
     end)
-print("T1m Hub")
+
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer() --auto join phi thuyen` gems
+
+print("work")
 OrionLib:Init()
