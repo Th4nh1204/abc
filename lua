@@ -23,7 +23,7 @@ Main:AddLabel("Default:Anti AFK ✅")
 Main:AddButton({
 	Name = "Kawai Dojo",
 	Callback = function()
-        
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer()
   	end    
 })
 
