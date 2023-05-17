@@ -19,11 +19,11 @@ local Main = Main:AddSection({
 	Name = "Made By T1m#9796"
 })
 
-Main:AddLabel("Anti AFK ✅")
+Main:AddLabel("Default:Anti AFK ✅")
 Main:AddButton({
 	Name = "Kawai Dojo",
 	Callback = function()
-        game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer()
+        
   	end    
 })
 
@@ -31,7 +31,7 @@ if not game:IsLoaded() then
     game.Loaded:wait()
 end
 Main:AddButton({
-	Name = "Anti Lag",
+	Name = "No Fog",
 	Callback = function()
         local ToDisable = {
             Textures = true,
