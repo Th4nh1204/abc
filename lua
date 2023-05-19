@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Th4nh1204/UILibrary/main/1')))()
 local Window = OrionLib:MakeWindow({Name = "T1m Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-OrionLib:MakeNotification({ --Thông Tin Chủ Code
+OrionLib:MakeNotification({ --Thông Tin 
 	Name = "T1m Hub",
 	Content = "Contact Discord: T1m#9796",
 	Image = "rbxassetid://4483345998",
@@ -20,7 +20,7 @@ local Main = Main:AddSection({
 })
 
 Main:AddLabel("Default:Anti AFK ✅")
-Main:AddLabel("Default:Auto GEMS ✅")
+Main:AddLabel("Default:Auto Time Machine ✅")
 
 
 if not game:IsLoaded() then
