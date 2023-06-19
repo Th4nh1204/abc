@@ -9,8 +9,6 @@ function Reloadgui()
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("T1m Hub", 5013109572,os.date())
 
-_G.Webhook = "https://discord.com/api/webhooks/1120326206642987150/1baI2jDeOJAFnoJKapaSoXtQTaca4i3-XKCDPRqWCSxDRErgddH5f-zxIAsEZEWby0MS"
-
 if game.PlaceId == 8304191830 then
     game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer() --auto join phi thuyen` gems
 end
@@ -44,7 +42,7 @@ if game.PlaceId == 10098525303 then
     local plr = game:GetService("Players").LocalPlayer
     local short =  plr.PlayerGui.TimeMachineUI.Info 
     local content = "Name : ||```"..plr.Name.."```||\n\n"
-    local webhook = _G.Webhook
+    local webhook = "https://discord.com/api/webhooks/1093934910168903800/t0P6x4S98Vx2Pf8-qZ3bWXIsPG0bpqH70PtwVlemYuWEv-eX80AVAArNXlUYHWNfKH7a"
     
     function sendwebhookwithresults()
     repeat wait(0.1) until plr.PlayerGui.TimeMachineUI.Enabled == true
