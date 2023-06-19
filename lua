@@ -1,110 +1,16 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Th4nh1204/UILibrary/main/1')))()
-local Window = OrionLib:MakeWindow({Name = "T1m Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("T1m Hub", 5013109572,os.date())
 
-OrionLib:MakeNotification({ --Thông Tin 
-	Name = "T1m Hub",
-	Content = "Contact Discord: T1m#9796",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
+local page = venyx:addPage("Main", 13503612303)
+local Main = page:addSection("Main")
 
---Window
-local Main = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
---Section
-local Main = Main:AddSection({
-	Name = "Made By T1m#9796"
-})
+Main:addButton("Default:Anti AFK ✅", function()
+    print("con cho la con meo")
+end)
 
-Main:AddLabel("Default:Anti AFK ✅")
-Main:AddLabel("Default:Auto Time Machine ✅")
-
-
-if not game:IsLoaded() then
-    game.Loaded:wait()
-end
-Main:AddButton({
-	Name = "No Fog",
-	Callback = function()
-        local ToDisable = {
-            Textures = true,
-            VisualEffects = true,
-            Parts = true,
-            Particles = true,
-            Sky = true
-        }
-        
-        local ToEnable = {
-            FullBright = false
-        }
-        
-        local Stuff = {}
-        
-        for _, v in next, game:GetDescendants() do
-            if ToDisable.Parts then
-                if v:IsA("Part") or v:IsA("Union") or v:IsA("BasePart") then
-                    v.Material = Enum.Material.SmoothPlastic
-                    table.insert(Stuff, 1, v)
-                end
-            end
-            
-            if ToDisable.Particles then
-                if v:IsA("ParticleEmitter") or v:IsA("Smoke") or v:IsA("Explosion") or v:IsA("Sparkles") or v:IsA("Fire") then
-                    v.Enabled = false
-                    table.insert(Stuff, 1, v)
-                end
-            end
-            
-            if ToDisable.VisualEffects then
-                if v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("SunRaysEffect") then
-                    v.Enabled = false
-                    table.insert(Stuff, 1, v)
-                end
-            end
-            
-            if ToDisable.Textures then
-                if v:IsA("Decal") or v:IsA("Texture") then
-                    v.Texture = ""
-                    table.insert(Stuff, 1, v)
-                end
-            end
-            
-            if ToDisable.Sky then
-                if v:IsA("Sky") then
-                    v.Parent = nil
-                    table.insert(Stuff, 1, v)
-                end
-            end
-        end
-        
-        game:GetService("TestService"):Message("Effects Disabler Script : Successfully disabled "..#Stuff.." assets / effects. Settings :")
-        
-        for i, v in next, ToDisable do
-            print(tostring(i)..": "..tostring(v))
-        end
-        
-        if ToEnable.FullBright then
-            local Lighting = game:GetService("Lighting")
-            
-            Lighting.FogColor = Color3.fromRGB(255, 255, 255)
-            Lighting.FogEnd = math.huge
-            Lighting.FogStart = math.huge
-            Lighting.Ambient = Color3.fromRGB(255, 255, 255)
-            Lighting.Brightness = 5
-            Lighting.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)
-            Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)
-            Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)
-            Lighting.Outlines = true
-        end
-  	end    
-})
-
-if not game:IsLoaded() then
-    game.Loaded:wait()
-end
+Main:addButton("Default:Auto GEMS ✅", function()
+    print("con ga la con vit")
+end)
 
 
 local VirtualUser = game:service'VirtualUser' --auto afk
@@ -113,7 +19,14 @@ local VirtualUser = game:service'VirtualUser' --auto afk
         VirtualUser:ClickButton2(Vector2.new())
     end)
 
+    Main:addKeybind("Keybind Turn ON/OFF", Enum.KeyCode.LeftControl, function()
+        venyx:toggle()
+    end, function()
+    end)
+
     game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer() --auto join phi thuyen` gems
 
+
 print("work")
-OrionLib:Init()
+
+venyx:SelectPage(venyx.pages[1], true)
