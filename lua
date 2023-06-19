@@ -32,7 +32,7 @@ if game.PlaceId == 10098525303 then
         end, function()
         end)
     
-    while wait(600) do
+    while wait(300) do
         sendwebhookwithresults()
     end
     
