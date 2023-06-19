@@ -9,6 +9,12 @@ function Reloadgui()
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("T1m Hub", 5013109572,os.date())
 
+_G.Wehook = ""
+
+if game.PlaceId == 8304191830 then
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer() --auto join phi thuyen` gems
+end
+
 if game.PlaceId == 10098525303 then
     local page2 = venyx:addPage("Main", 13503612303)
     local Main = page2:addSection("Main")
@@ -35,7 +41,6 @@ if game.PlaceId == 10098525303 then
     while wait(300) do
         sendwebhookwithresults()
     end
-    
     local plr = game:GetService("Players").LocalPlayer
     local short =  plr.PlayerGui.TimeMachineUI.Info 
     local content = "Name : ||```"..plr.Name.."```||\n\n"
@@ -84,9 +89,6 @@ if game.PlaceId == 10098525303 then
 end
     end
 
-if game.PlaceId == 8304191830 then
-    game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer() --auto join phi thuyen` gems
-end
 
 end
 Reloadgui()
