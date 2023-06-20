@@ -38,8 +38,11 @@ if game.PlaceId == 10098525303 then
     local content = "Name : ||```"..plr.Name.."```||\n\n"
     local webhook = "https://discord.com/api/webhooks/1093934910168903800/t0P6x4S98Vx2Pf8-qZ3bWXIsPG0bpqH70PtwVlemYuWEv-eX80AVAArNXlUYHWNfKH7a"
     
-    function WebHook()
-    repeat wait(0.1) until plr.PlayerGui.TimeMachineUI.Enabled == true
+    function sendwebhookwithresults()
+        task.spawn(function()
+            if sendwebhookwithresults then
+            while task.wait(300) do
+    repeat wait() until plr.PlayerGui.TimeMachineUI.Enabled == true
     if short.Countdown.Visible == true then 
         if short.Countdown.Tip.Text == "+99999" then
             content = content.."".."0".."\n"
@@ -77,11 +80,15 @@ if game.PlaceId == 10098525303 then
        },
     }
     (http_request or request or syn.request or fluxus.request)({Url = webhook, Body = game:GetService("HttpService"):JSONEncode(data), Method = "POST", Headers = {["content-type"] = "application/json"}})
-
 end
-    while wait(30) do
-        WebHook()
-    end
+end
+end)
+end
+Main:addToggle("Webhook", false, function(a)
+	getgenv().sendwebhookwithresults = a
+    sendwebhookwithresults()
+end)
+
 
         
     end
