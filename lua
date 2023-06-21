@@ -14,6 +14,10 @@ if game.PlaceId == 10098525303 then
     local page2 = venyx:addPage("Main", 13503612303)
     local Main = page2:addSection("Main")
     
+    Main:addButton("Reload GUI", function()
+        Reloadgui()
+    end)
+    
     Main:addButton("Default:Anti AFK ✅", function()
         print("con cho la con meo")
     end)
