@@ -41,7 +41,7 @@ if game.PlaceId == 10098525303 then
     function sendwebhookwithresults()
         task.spawn(function()
             if sendwebhookwithresults then
-            while task.wait(300) do
+            while task.wait(900) do
     repeat wait() until plr.PlayerGui.TimeMachineUI.Enabled == true
     if short.Countdown.Visible == true then 
         if short.Countdown.Tip.Text == "+99999" then
@@ -68,7 +68,7 @@ if game.PlaceId == 10098525303 then
         ["embeds"] = {
            {
             ["title"] = content,
-            ["description"] = "5 phut' thong^ bao' 1 lan`",
+            ["description"] = "15 phut' thong^ bao' 1 lan`",
             ["color"] = "110335",
             ["author"] = {
                 ["name"] = "T1m Webhook",
@@ -89,8 +89,6 @@ Main:addToggle("Webhook", false, function(a)
     sendwebhookwithresults()
 end)
 
-
-        
     end
     if game.PlaceId == 8304191830 then
         game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_to_time_machine:InvokeServer() --auto join phi thuyen` gems
